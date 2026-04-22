@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Teaching Avatar</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="/static/vanco-logo.png" alt="VANCO" class="logo-img" />
+      <div class="logo-divider"></div>
+      <div class="logo-text">
+        <span class="logo-company">VANCO</span>
+        <span class="logo-product">AI Teaching Avatar</span>
+      </div>
+      <span class="logo-badge">Beta</span>
+    </div>
+    <select id="course-selector" class="course-selector"></select>
+  </header>
+
+  <main>
+
+    <!-- ── Left: Avatar Panel ── -->
+    <section class="avatar-panel">
+
+      <!-- Gradient banner -->
+      <div class="avatar-banner">
+        <div class="avatar-banner-text">
+          <h2>AI Instructor</h2>
+          <p>Professor Ada</p>
+        </div>
+      </div>
+
+      <!-- Avatar floating over banner -->
+      <div class="avatar-float-wrap">
+        <div class="avatar-glow"></div>
+        <div id="avatar-container" class="avatar-container idle">
+          <div id="avatar-svg-wrap"></div>
+        </div>
+      </div>
+
+      <!-- Professor info row -->
+      <div class="professor-card">
+        <div class="professor-avatar-thumb">👩‍🏫</div>
+        <div class="professor-info-text">
+          <div class="professor-name">Professor Ada</div>
+          <div class="professor-role">Biology · AI Instructor</div>
+        </div>
+        <div id="status-badge" class="status-pill idle">
+          <div class="status-dot"></div>
+          <span id="status-text">Ready</span>
+        </div>
+      </div>
+
+      <!-- Streaming response -->
+      <div id="response-box" class="response-card">
+        <span class="response-placeholder">Ask me anything about the current module…</span>
+      </div>
+
+    </section>
+
+    <!-- ── Right: Sidebar ── -->
+    <aside class="sidebar">
+
+      <!-- Module info -->
+      <div class="sidebar-block">
+        <div class="block-label">Current Module</div>
+        <div class="module-card">
+          <div class="module-course-tag" id="course-name-label">Biology 101</div>
+          <div id="module-name" class="module-heading">Loading…</div>
+          <div class="progress-row">
+            <div class="progress-track">
+              <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+            </div>
+            <div id="progress-label" class="progress-text">1 / 4</div>
+          </div>
+        </div>
+        <div id="module-tabs" class="module-tabs"></div>
+      </div>
+
+      <!-- Suggested questions -->
+      <div class="sidebar-block">
+        <div class="block-label">Suggested Questions</div>
+        <div id="sample-questions" class="suggestions"></div>
+      </div>
+
+      <!-- Q&A history -->
+      <div id="qa-history" class="qa-section"></div>
+
+    </aside>
+  </main>
+
+  <!-- Input bar — full width -->
+  <div class="input-bar">
+    <input
+      id="question-input"
+      class="question-input"
+      type="text"
+      placeholder="Ask Professor Ada anything…"
+      autocomplete="off"
+    />
+    <button id="ask-btn" class="ask-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+      Send
+    </button>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

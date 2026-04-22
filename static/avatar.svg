@@ -1,0 +1,138 @@
+<svg id="professor-avatar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 380" width="280" height="380">
+  <defs>
+    <radialGradient id="skinGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f5c5a3"/>
+      <stop offset="100%" stop-color="#e8a882"/>
+    </radialGradient>
+    <radialGradient id="bodyGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2d3561"/>
+      <stop offset="100%" stop-color="#1a1f3c"/>
+    </radialGradient>
+    <radialGradient id="shirtGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8e8f0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Body / Suit jacket -->
+  <ellipse cx="140" cy="330" rx="90" ry="70" fill="url(#bodyGrad)"/>
+  <path d="M70 280 Q90 260 110 255 L140 310 L170 255 Q190 260 210 280 L220 380 L60 380 Z" fill="url(#bodyGrad)"/>
+
+  <!-- Shirt collar and tie -->
+  <path d="M115 255 L140 285 L165 255 L155 250 L140 270 L125 250 Z" fill="url(#shirtGrad)"/>
+  <!-- Tie -->
+  <path d="M136 265 L144 265 L148 310 L140 322 L132 310 Z" fill="#c0392b"/>
+  <path d="M136 265 L144 265 L141 272 L139 272 Z" fill="#922b21"/>
+
+  <!-- Shoulders and lapels -->
+  <path d="M70 280 Q85 265 110 255 L125 250 L115 255 L100 275 Q80 295 75 320 L60 380 L70 380 Z" fill="#232853"/>
+  <path d="M210 280 Q195 265 170 255 L155 250 L165 255 L180 275 Q200 295 205 320 L220 380 L210 380 Z" fill="#232853"/>
+
+  <!-- Neck -->
+  <rect x="126" y="230" width="28" height="30" rx="8" fill="url(#skinGrad)"/>
+
+  <!-- Head group (animated via CSS) -->
+  <g id="head-group">
+    <!-- Head shape -->
+    <ellipse id="face" cx="140" cy="175" rx="68" ry="78" fill="url(#skinGrad)"/>
+
+    <!-- Ears -->
+    <ellipse cx="73" cy="178" rx="10" ry="14" fill="#e8a882"/>
+    <ellipse cx="207" cy="178" rx="10" ry="14" fill="#e8a882"/>
+    <ellipse cx="73" cy="178" rx="6" ry="10" fill="#d4967a"/>
+    <ellipse cx="207" cy="178" rx="6" ry="10" fill="#d4967a"/>
+
+    <!-- Hair -->
+    <ellipse cx="140" cy="108" rx="68" ry="32" fill="#2c1810"/>
+    <rect x="72" y="108" width="136" height="22" fill="#2c1810"/>
+    <ellipse cx="80" cy="130" rx="18" ry="25" fill="#2c1810"/>
+    <ellipse cx="200" cy="130" rx="18" ry="25" fill="#2c1810"/>
+    <!-- Hair side part detail -->
+    <path d="M105 100 Q130 92 155 100" stroke="#1a0f09" stroke-width="2" fill="none"/>
+
+    <!-- Eyebrows -->
+    <path d="M102 148 Q117 142 132 147" stroke="#2c1810" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M148 147 Q163 142 178 148" stroke="#2c1810" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyes group -->
+    <g id="eye-left">
+      <ellipse cx="117" cy="163" rx="14" ry="12" fill="white"/>
+      <ellipse cx="117" cy="164" rx="8" ry="9" fill="#3d5a80"/>
+      <ellipse cx="117" cy="164" rx="5" ry="5" fill="#1a2a3a"/>
+      <ellipse cx="113" cy="161" rx="2" ry="2" fill="white"/>
+      <!-- Eyelid for blink -->
+      <rect id="eyelid-left" x="103" y="151" width="28" height="0" rx="2" fill="url(#skinGrad)"/>
+    </g>
+    <g id="eye-right">
+      <ellipse cx="163" cy="163" rx="14" ry="12" fill="white"/>
+      <ellipse cx="163" cy="164" rx="8" ry="9" fill="#3d5a80"/>
+      <ellipse cx="163" cy="164" rx="5" ry="5" fill="#1a2a3a"/>
+      <ellipse cx="159" cy="161" rx="2" ry="2" fill="white"/>
+      <!-- Eyelid for blink -->
+      <rect id="eyelid-right" x="149" y="151" width="28" height="0" rx="2" fill="url(#skinGrad)"/>
+    </g>
+
+    <!-- Glasses frames -->
+    <rect x="101" y="151" width="32" height="24" rx="6" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+    <rect x="147" y="151" width="32" height="24" rx="6" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+    <!-- Bridge -->
+    <path d="M133 163 L147 163" stroke="#1a1a2e" stroke-width="2" fill="none"/>
+    <!-- Arms -->
+    <line x1="101" y1="163" x2="83" y2="168" stroke="#1a1a2e" stroke-width="2.5"/>
+    <line x1="179" y1="163" x2="197" y2="168" stroke="#1a1a2e" stroke-width="2.5"/>
+
+    <!-- Nose -->
+    <path d="M136 175 Q133 192 128 198 Q135 204 140 203 Q145 204 152 198 Q147 192 144 175" fill="#d4967a" opacity="0.6"/>
+
+    <!-- Mouth group - different states, only one visible at a time -->
+    <g id="mouth-group">
+      <!-- closed: gentle smile -->
+      <path id="mouth-closed" d="M124 214 Q140 221 156 214" stroke="#b56b5a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- open small: lips barely parted -->
+      <g id="mouth-open-sm" style="display:none">
+        <!-- outer lip shape -->
+        <path d="M124 213 Q140 217 156 213 Q148 224 140 225 Q132 224 124 213 Z" fill="#c07868"/>
+        <!-- dark mouth interior -->
+        <path d="M127 215 Q140 218 153 215 Q148 222 140 223 Q132 222 127 215 Z" fill="#5a1a14"/>
+        <!-- upper lip highlight -->
+        <path d="M124 213 Q140 217 156 213" stroke="#d4897a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- open medium -->
+      <g id="mouth-open-md" style="display:none">
+        <path d="M120 211 Q140 215 160 211 Q152 228 140 230 Q128 228 120 211 Z" fill="#c07868"/>
+        <path d="M124 213 Q140 216 156 213 Q150 226 140 227 Q130 226 124 213 Z" fill="#5a1a14"/>
+        <path d="M120 211 Q140 215 160 211" stroke="#d4897a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- open large -->
+      <g id="mouth-open-lg" style="display:none">
+        <path d="M117 209 Q140 213 163 209 Q156 232 140 234 Q124 232 117 209 Z" fill="#c07868"/>
+        <path d="M122 212 Q140 215 158 212 Q153 229 140 231 Q127 229 122 212 Z" fill="#5a1a14"/>
+        <path d="M117 209 Q140 213 163 209" stroke="#d4897a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- subtle tongue hint, no harsh teeth -->
+        <ellipse cx="140" cy="226" rx="10" ry="4" fill="#c0756a" opacity="0.6"/>
+      </g>
+    </g>
+
+    <!-- Thinking state eye direction indicator (subtle upward look) -->
+    <g id="thinking-pupils" style="display:none">
+      <ellipse cx="117" cy="160" rx="5" ry="5" fill="#1a2a3a"/>
+      <ellipse cx="163" cy="160" rx="5" ry="5" fill="#1a2a3a"/>
+    </g>
+  </g>
+
+  <!-- Pointer/book in hand (decorative) -->
+  <g id="pointer" opacity="0.7">
+    <rect x="30" y="290" width="4" height="55" rx="2" fill="#7c3aed" transform="rotate(-15 32 290)"/>
+    <circle cx="25" cy="285" r="5" fill="#06b6d4"/>
+  </g>
+</svg>
